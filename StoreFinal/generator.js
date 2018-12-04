@@ -1,6 +1,7 @@
 var Generator = /** @class */ (function () {
     function Generator() {
     }
+    ///wpw
     //create random text string
     Generator.createPrint = function () {
         var text = "";

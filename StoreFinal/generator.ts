@@ -1,5 +1,5 @@
 ﻿class Generator {
-
+///wpw
     //create random text string
     private static createPrint(): string {
         let text = "";
