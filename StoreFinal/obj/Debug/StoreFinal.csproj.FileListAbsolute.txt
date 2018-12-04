@@ -1,7 +1,0 @@
-C:\Users\yulian\source\repos\StoreFinal\StoreFinal\obj\Debug\StoreFinal.csprojAssemblyReference.cache
-C:\Users\yulian\source\repos\StoreFinal\StoreFinal\bin\TypeScriptHTMLApp1.dll.config
-C:\Users\yulian\source\repos\StoreFinal\StoreFinal\bin\TypeScriptHTMLApp1.dll
-C:\Users\yulian\source\repos\StoreFinal\StoreFinal\bin\TypeScriptHTMLApp1.pdb
-C:\Users\yulian\source\repos\StoreFinal\StoreFinal\obj\Debug\StoreFinal.csproj.CoreCompileInputs.cache
-C:\Users\yulian\source\repos\StoreFinal\StoreFinal\obj\Debug\TypeScriptHTMLApp1.dll
-C:\Users\yulian\source\repos\StoreFinal\StoreFinal\obj\Debug\TypeScriptHTMLApp1.pdb
