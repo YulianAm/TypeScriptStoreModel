@@ -1,9 +1,10 @@
 ﻿class tester {
     private _size: number;
 
+
     private set size(size: number) {
         if ((size > 0) && (size < 1000)) {
-            this._size = size;
+            this._size = size;  
         }
     }
 
@@ -24,7 +25,8 @@
 
         //create new random array based on user input (empty for now)
             itemArray = new Array<item>(this._size);
-        
+
+
         //fill array with random items 
         for (let i = 0; i < itemArray.length; i++) {
 
@@ -39,9 +41,9 @@
             itemArray[i].displayImage();
             
             document.write(`<Br><br><br><hr>`);
-        }
+        
 
-
+            }
 
 
     }

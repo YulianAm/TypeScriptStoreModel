@@ -69,8 +69,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="classes\glasses.ts" />
     <TypeScriptCompile Include="classes\pants.ts" />
     <TypeScriptCompile Include="classes\dresses.ts" />
+    <TypeScriptCompile Include="classes\jackets.ts" />
+    <TypeScriptCompile Include="classes\hats.ts" />
+    <TypeScriptCompile Include="classes\dimension.ts" />
+    <TypeScriptCompile Include="classes\belts.ts" />
     <TypeScriptCompile Include="classes\shoes.ts" />
     <TypeScriptCompile Include="classes\shirts.ts" />
     <TypeScriptCompile Include="classes\abstract.ts" />

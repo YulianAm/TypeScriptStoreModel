@@ -205,9 +205,13 @@ abstract class shoes extends item {
 
     private _shoe_size: number;
     private _shoe_color: string;
+    private _madeIn: string;
     private _isLaces: boolean;
+   
 
-
+    set madeIn(country: string) {
+        this._madeIn = country;
+    }
     set shoe_size(size: number) {
         if ((size <= 0) || (size > 50)) {
             throw "size is either negative or 0 or above 50";
@@ -223,7 +227,9 @@ abstract class shoes extends item {
     set isLaces(laces: boolean) {
             this._isLaces = laces;
     }
-
+    get madeIn(): string {
+        return this._madeIn;
+    }
     get isLaces(): boolean {
         return this._isLaces;
     }
@@ -237,13 +243,195 @@ abstract class shoes extends item {
 
     public displayDetails(): void {
         super.displayDetails();
-        document.write(`shoe size is: ${this.shoe_size} <br> shoe color is: ${this.shoe_color} <br>`);
+        document.write(`shoe size is: ${this.shoe_size} <br> shoe color is: ${this.shoe_color} <br> islaces? ${this.isLaces} <br> made in: ${this.madeIn} <br>`);
 
     }
 
-    constructor(price: number, item_manufacturer: string, item_model: string, shoe_size: number = 36, shoe_color: string = "white") {
+    constructor(price: number, item_manufacturer: string, item_model: string, shoe_size: number = 36, shoe_color: string = "white", madein: string = "China", islaces = false) {
         super(price, item_manufacturer, item_model);
         this.shoe_size = shoe_size;
         this.shoe_color = shoe_color;
+        this.madeIn = madein;
+        this.isLaces = islaces;
+    }
+}
+
+
+abstract class Jacket extends item {
+
+    private _jacket_size: number;
+    private _jacket_color: string;
+    private _cloth_thickness: number;
+
+    set jacket_size(size: number) {
+        if ((size <= 0) || (size > 50)) {
+            throw "size is either negative or 0 or above 50";
+        }
+        else {
+            this._jacket_size = size;
+        }
+
+    }
+    set jacket_color(color: string) {
+        this._jacket_color = color;
+    }
+    set cloth_thickness(thick: number) {
+        if ((thick <= 0) || (thick > 10)) {
+            throw "thickness is either negative or 0 or above 10";
+        }
+        else {
+            this._cloth_thickness = thick;
+        }
+    }
+
+    get jacket_size(): number {
+        return this._jacket_size;
+    }
+    get jacket_color(): string {
+        return this._jacket_color;
+    }
+    get cloth_thickness(): number {
+        return this._cloth_thickness;
+    }
+
+
+    public displayDetails(): void {
+        super.displayDetails();
+        document.write(`jacket size is: ${this.jacket_size} <br> jacket color is: ${this.jacket_color} <br>  jacket thickness is : ${this.cloth_thickness} <br>`);
+
+    }
+
+    constructor(price: number, item_manufacturer: string, item_model: string, jacket_size: number = 30, jacket_color: string = "black", thickness: number = 5) {
+        super(price, item_manufacturer, item_model);
+        this.jacket_size = jacket_size;
+        this.jacket_color = jacket_color;
+        this.cloth_thickness = thickness;
+
+    }
+}
+
+
+abstract class Hat extends item {
+
+    private _hat_size: number;
+    private _hat_color: string;
+    private _hat_diameter: number;
+
+    set hat_size(size: number) {
+        if ((size <= 0) || (size > 60)) {
+            throw "size is either negative or 0 or above 60";
+        }
+        else {
+            this._hat_size = size;
+        }
+
+    }
+    set hat_color(color: string) {
+        this._hat_color = color;
+    } 
+    set hat_diameter(diameter: number) {
+        if ((diameter <= 0) || (diameter > 15)) {
+            throw "size is either negative or 0 or above 15";
+        }
+        else {
+            this._hat_diameter = diameter;
+        }
+    }
+
+    get hat_size(): number {
+        return this._hat_size;
+    }
+    get hat_color(): string {
+        return this._hat_color;
+    }
+    get hat_diameter(): number {
+        return this._hat_diameter;
+    }
+
+
+    public displayDetails(): void {
+        super.displayDetails();
+        document.write(`hat size is: ${this.hat_size} <br> hat color is: ${this.hat_color} <br>  hat diameter is : ${this.hat_diameter} <br>`);
+
+    }
+
+    constructor(price: number, item_manufacturer: string, item_model: string, hatSize: number = 30, hat_color: string = "Red", diameter: number = 5) {
+        super(price, item_manufacturer, item_model);
+        this.hat_size = hatSize;
+        this.hat_color = hat_color;
+        this.hat_diameter = diameter;
+
+    }
+}
+
+abstract class Belt extends item {
+
+    private _belt_color: string;
+    private _belt_buckle_color: string;
+    private _belt_buckle_material: string;
+    private _belt_dimensions: Dimensions;
+
+    set belt_color(color: string) {
+        this._belt_color = color;
+    }
+    set belt_buckle_color(color: string) {
+        this._belt_buckle_color = color;
+    }
+    set belt_buckle_material(mat: string) {
+        this._belt_buckle_material = mat;
+    }
+    set belt_dimensions(dim: Dimensions) {
+        this._belt_dimensions = dim;
+    }
+
+    get belt_color(): string {
+        return this._belt_color;
+    }
+    get belt_buckle_color(): string {
+        return this._belt_buckle_color;
+    }
+    get belt_buckle_material(): string {
+        return this._belt_buckle_material;
+    }
+    get belt_dimensions(): Dimensions {
+       return this._belt_dimensions;
+    }
+
+
+    public displayDetails(): void {
+        super.displayDetails();
+        document.write(`belt color is: ${this.belt_color} <br>  belt buckle color is : ${this.belt_buckle_color} <br> 
+                        belt_buckle_material is ${this.belt_buckle_material} <br> 
+                        belt dimnesion height ${this.belt_dimensions.height} <br> 
+                        belt dimnesion width ${this.belt_dimensions.width} <br>      
+                        belt dimnesion length ${this.belt_dimensions.length} <br>`);
+
+    }
+    //
+    constructor(price: number, item_manufacturer: string, item_model: string, belt_color: string = "Brown", belt_buckle_color: string = "Red", belt_buckle_material: string = "Leather", dimensions: Dimensions = new Dimensions() ) {
+        super(price, item_manufacturer, item_model);
+        this.belt_buckle_color = belt_buckle_color;
+        this.belt_color = belt_color;
+        this.belt_buckle_material = belt_buckle_material;
+        this.belt_dimensions = dimensions;
+
+    }
+}
+
+
+abstract class Accessory extends item {
+    private _frame_color: string;
+
+    set frame_color(color: string) {
+        this._frame_color = color;
+    }
+
+    get frame_color(): string {
+        return this._frame_color;
+    }
+
+    constructor(price: number, manuf: string, model: string, frameColor: string = "Blue") {
+        super(price, manuf, model);
+        this.frame_color = frameColor;
     }
 }
